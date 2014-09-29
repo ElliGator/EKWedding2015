@@ -2,6 +2,8 @@ function checkFormValues(){
 		var inputsValid = true;
 		var x;
 		
+		//Check the code
+		validateCode();
 		//Check the Main Guest input field
 		var nameForm= document.forms["guestForm"]["main_guest"];
 		var value = nameForm.value.trim();
@@ -43,4 +45,8 @@ function checkFormValues(){
 		}	
 
 		return inputsValid;
+}
+
+function validateCode(){
+	return true;
 }
