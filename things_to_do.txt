@@ -1,1 +1,4 @@
--Create a getCodes.php file which will return an array of all the codes in the database.
+-Create a checkCode.php which will:
+	-Take in a code under $_GET["code"]
+	-Check if the code exists in the db and has not been used.
+		-Returns a string containing true or false

@@ -1,9 +1,16 @@
+//Peform form validation
 function checkFormValues(){
 		var inputsValid = true;
 		var x;
 		
 		//Check the code
-		validateCode();
+		var isCodeValid = validateCode();
+		if(!isCodeValid)
+		{
+			alert("Code is invalid");
+			return false;
+		}
+		
 		//Check the Main Guest input field
 		var nameForm= document.forms["guestForm"]["main_guest"];
 		var value = nameForm.value.trim();
@@ -27,12 +34,11 @@ function checkFormValues(){
 			}
 			else
 			{
-				var length = guestInputs.length-1; //Had to use length because a for/in loop was grabbing elements which contained meta-data vs inputs.
-
+				var guests = guestInputs["guests[]"];
 				//For each guest input, check if it is empty. Return if as soon as an empty input is found.
-				for(i=1; i<length; i++)
+				for(i=0; i<guests.length; i++)
 				{
-					var input = guestInputs[i];
+					var input = guests[i];
 					var value = input.value.trim();
 					if(!value)
 					{
@@ -48,5 +54,42 @@ function checkFormValues(){
 }
 
 function validateCode(){
-	return true;
+
+	var code = document.forms["guestForm"]["code"].value.trim();
+	var xmlhttp;
+
+	if (window.XMLHttpRequest)
+	{// for IE7+, Firefox, Chrome, Opera, Safari
+	  	xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{// for IE6, IE5
+	  	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+
+	xmlhttp.onreadystatechange=function()
+	{
+		if(xmlhttp.readyState==4 && xmlhttp.status == 200)
+		{
+			if(xmlhttp.responseText === "true")
+			{
+				changeCodeBorder("green");
+				return true;
+			}
+			else
+			{
+				changeCodeBorder("red");
+				return false;
+			}
+				
+		}
+	}
+
+	xmlhttp.open("GET", "checkCode.php?code=" + code, true);
+	xmlhttp.send();
+}
+
+function changeCodeBorder(color)
+{
+	document.getElementById("code").style.borderColor=color;
 }
