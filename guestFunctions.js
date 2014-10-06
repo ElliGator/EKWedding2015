@@ -1,3 +1,4 @@
+
 //Removes the fields which allow guest names to be entered
 function removeGuestinputs(){
 		var newHTML = "";
@@ -20,7 +21,7 @@ function displayGuestInputs() {
 		     {
 		       newHTML = newHTML + "<br>Guest Name: <input type=\"text\" class=\"inputs\" name=\"guests[]\"><br>";
 		     }
-		     newHTML= newHTML + "<br><button onclick=\"removeGuestinputs()\">Change # of Guests</button>";
+		     newHTML= newHTML + "<br><button class=\"myButtons\" onclick=\"removeGuestinputs()\">Change # of Guests</button>";
 		    var guestDiv = document.getElementById("guest_input");
 			guestDiv.setAttribute("data-state","fields");
 			guestDiv.innerHTML =  newHTML;
