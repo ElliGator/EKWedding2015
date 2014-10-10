@@ -78,19 +78,19 @@ function validateCode(){
 		{
 			var rsvpButton = document.getElementById("rsvp_button");
 			//If code is valid allow for rsvp
-			alert(xmlhttp.responseText);
+			//alert(xmlhttp.responseText);
 			if(xmlhttp.responseText === "true")
 			{
 				rsvpButton.disabled = false;
 				rsvpButton.className = "myButtons";
 
 				//Cause animation
-				animateCodeBorder("green");
+				changeCodeBorder("green");
 				return true;
 			}
 			else
 			{
-				animateCodeBorder("red");
+				changeCodeBorder("red");
 				return false;
 			}
 				
