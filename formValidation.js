@@ -4,7 +4,7 @@ function checkFormValues(){
 		
 		
 		//Check the code
-		var isCodeValid = validateCode();
+		/*var isCodeValid = validateCode();
 
 		//This should never happen due to button disabling in the validateCode() method
 		if(!isCodeValid)
@@ -13,6 +13,7 @@ function checkFormValues(){
 			return false;
 		}
 		//
+		*/
 		
 		
 		//Check the Main Guest input field
@@ -75,7 +76,6 @@ function validateCode(){
 	//This function allows for the border color to change asynchronously
 	xmlhttp.onreadystatechange=function()
 	{
-		alert("State change");
 		if(xmlhttp.readyState==4 && xmlhttp.status == 200)
 		{
 			var rsvpButton = document.getElementById("rsvpButton");
