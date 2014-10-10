@@ -6,13 +6,12 @@ function checkFormValues(){
 		//Check the code
 		var isCodeValid = validateCode();
 
-		//This should never happen due to button disabling in the validateCode() method
 		if(!isCodeValid)
 		{
 			alert("Code is invalid");
 			return false;
 		}
-		//
+		
 		
 		
 		//Check the Main Guest input field
@@ -100,6 +99,8 @@ function validateCode(){
 
 	xmlhttp.open("GET", "checkCode.php?code=" + code, true);
 	xmlhttp.send();
+
+	//return true;
 }
 
 function changeCodeBorder(color)
@@ -115,4 +116,11 @@ function animateCodeBorder(color)
 	window.setTimeout(function(){changeCodeBorder(color)}, 500);
 	window.setTimeout(function(){changeCodeBorder("initial")}, 750);
 	
+}
+
+function changeClass()
+{
+	var rsvpButton = document.getElementById("rsvp_button");
+	rsvpButton.disabled = false;
+	rsvpButton.className = "myButtons";
 }
