@@ -66,7 +66,7 @@
 
 				<form id="guest_form" class="form" name="guestForm" action="addGuests.php" method="POST">
 				<div id="name_input">
-					Code: <input type="text" class="inputs" id="code" name="code" onkeypress="validateCode()"onfocus="changeCodeBorder('red')" onblur="changeCodeBorder('black')"><br><br>
+					Code: <input type="text" class="inputs" id="code" name="code" onblur="validateCode();"><br><br>
 					Name: <input type="text" class="inputs" name="main_guest">
 					<br><br>I'm bringing guests <input id="guest_checkbox" type="checkbox" onchange="handleGuestCheckbox(this)"> <hr>
 				</div>
@@ -79,8 +79,8 @@
 					<input id="extras" type="text" name="Extras">
 					<br><br><button class= "myButtons" onclick="displayGuestInputs()" style="visibility">Enter Guest Names</button>
 				</div>
-				<button class="myButtons" style="position:center;" onclick="submitRSVP()">RSVP</button>
-
+				<button id="rsvp_button" class="myButtons" style="position:center;" onclick="submitRSVP()">RSVP</button>
+				<!--<button id="rsvp_button" style="position:center;" onclick="submitRSVP()" disabled>RSVP</button>-->
 
 				<!-- Functions for dynamic updates on web page-->
 				<script src="guestFunctions.js"></script>

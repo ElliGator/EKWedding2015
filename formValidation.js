@@ -1,15 +1,19 @@
 //Peform form validation
 function checkFormValues(){
 		var inputsValid = true;
-		var x;
+		
 		
 		//Check the code
 		var isCodeValid = validateCode();
+
+		//This should never happen due to button disabling in the validateCode() method
 		if(!isCodeValid)
 		{
 			alert("Code is invalid");
 			return false;
 		}
+		//
+		
 		
 		//Check the Main Guest input field
 		var nameForm= document.forms["guestForm"]["main_guest"];
@@ -53,6 +57,7 @@ function checkFormValues(){
 		return inputsValid;
 }
 
+//Make sure the code exists in the database
 function validateCode(){
 
 	var code = document.forms["guestForm"]["code"].value.trim();
@@ -67,18 +72,26 @@ function validateCode(){
 	  	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 	}
 
+	//This function allows for the border color to change asynchronously
 	xmlhttp.onreadystatechange=function()
 	{
+		alert("State change");
 		if(xmlhttp.readyState==4 && xmlhttp.status == 200)
 		{
+			var rsvpButton = document.getElementById("rsvpButton");
+			//If code is valid allow for rsvp
 			if(xmlhttp.responseText === "true")
 			{
-				changeCodeBorder("green");
+				rsvpButton.disabled = false;
+				rsvpButton.className = "myButtons";
+
+				//Cause animation
+				animateCodeBorder("green");
 				return true;
 			}
 			else
 			{
-				changeCodeBorder("red");
+				animateCodeBorder("red");
 				return false;
 			}
 				
@@ -92,4 +105,13 @@ function validateCode(){
 function changeCodeBorder(color)
 {
 	document.getElementById("code").style.borderColor=color;
+}
+
+//Cause animation: Note that setTimeout() does not delay execution of this function.
+function animateCodeBorder(color)
+{
+	changeCodeBorder(color);
+	window.setTimeout(changeCodeBorder("initial"), 500);
+	window.setTimeout(changeCodeBorder(color), 1000);
+	window.setTimeout(changeCodeBorder("initial"), 1500);
 }
