@@ -111,7 +111,8 @@ function changeCodeBorder(color)
 function animateCodeBorder(color)
 {
 	changeCodeBorder(color);
-	window.setTimeout(changeCodeBorder("initial"), 500);
-	window.setTimeout(changeCodeBorder(color), 1000);
-	window.setTimeout(changeCodeBorder("initial"), 1500);
+	window.setTimeout(function(){changeCodeBorder("initial")}, 250);
+	window.setTimeout(function(){changeCodeBorder(color)}, 500);
+	window.setTimeout(function(){changeCodeBorder("initial")}, 750);
+	
 }
