@@ -75,11 +75,11 @@ function validateCode(){
 	//This function allows for the border color to change asynchronously
 	xmlhttp.onreadystatechange=function()
 	{
-		alert("State change");
 		if(xmlhttp.readyState==4 && xmlhttp.status == 200)
 		{
-			var rsvpButton = document.getElementById("rsvpButton");
+			var rsvpButton = document.getElementById("rsvp_button");
 			//If code is valid allow for rsvp
+			alert(xmlhttp.responseText);
 			if(xmlhttp.responseText === "true")
 			{
 				rsvpButton.disabled = false;
