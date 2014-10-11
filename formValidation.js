@@ -4,9 +4,9 @@ function checkFormValues(){
 		
 		
 		//Check the code
-		var isCodeValid = validateCode();
+		var isCodeValid = sessionStorage.getItem("isCodeValid");
 
-		if(!isCodeValid)
+		if(isCodeValid === "false")
 		{
 			alert("Code is invalid");
 			return false;
@@ -56,71 +56,3 @@ function checkFormValues(){
 		return inputsValid;
 }
 
-//Make sure the code exists in the database
-function validateCode(){
-
-	var code = document.forms["guestForm"]["code"].value.trim();
-	var xmlhttp;
-
-	if (window.XMLHttpRequest)
-	{// for IE7+, Firefox, Chrome, Opera, Safari
-	  	xmlhttp=new XMLHttpRequest();
-	}
-	else
-	{// for IE6, IE5
-	  	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	}
-
-	//This function allows for the border color to change asynchronously
-	xmlhttp.onreadystatechange=function()
-	{
-		if(xmlhttp.readyState==4 && xmlhttp.status == 200)
-		{
-			var rsvpButton = document.getElementById("rsvp_button");
-			//If code is valid allow for rsvp
-			//alert(xmlhttp.responseText);
-			if(xmlhttp.responseText === "true")
-			{
-				rsvpButton.disabled = false;
-				rsvpButton.className = "myButtons";
-
-				//Cause animation
-				changeCodeBorder("green");
-				return true;
-			}
-			else
-			{
-				changeCodeBorder("red");
-				return false;
-			}
-				
-		}
-	}
-
-	xmlhttp.open("GET", "checkCode.php?code=" + code, true);
-	xmlhttp.send();
-
-	//return true;
-}
-
-function changeCodeBorder(color)
-{
-	document.getElementById("code").style.borderColor=color;
-}
-
-//Cause animation: Note that setTimeout() does not delay execution of this function.
-function animateCodeBorder(color)
-{
-	changeCodeBorder(color);
-	window.setTimeout(function(){changeCodeBorder("initial")}, 250);
-	window.setTimeout(function(){changeCodeBorder(color)}, 500);
-	window.setTimeout(function(){changeCodeBorder("initial")}, 750);
-	
-}
-
-function changeClass()
-{
-	var rsvpButton = document.getElementById("rsvp_button");
-	rsvpButton.disabled = false;
-	rsvpButton.className = "myButtons";
-}
