@@ -16,7 +16,7 @@ function validateCode(){
 	var rsvpButton = document.getElementById("rsvp_button");
 
 	//Do not allow rsvp if the code is still being checked.
-	rsvpButton.disabled = true;
+	rsvpButton.setAttribute("disabled", "disabled");
 
 	//This function allows for the border color to change asynchronously
 	xmlhttp.onreadystatechange=function()
@@ -39,12 +39,19 @@ function validateCode(){
 				sessionStorage.setItem("isCodeValid", "false");
 			}
 		}
-		rsvpButton.disabled = false;
+		rsvpButton.removeAttribute("disabled");
 	}
 
-	xmlhttp.open("GET", "checkCode.php?code=" + code, true);
-	xmlhttp.send();
+	try{
 
+		xmlhttp.open("GET", "ceckCode.php?code=" + code, true);
+		xmlhttp.send();
+	}
+	catch(err)
+	{
+		//Re-enable the rsvp button if ajax request won't work
+		alert(rsvpButton.disabled);
+	}
 	//return true;
 }
 
