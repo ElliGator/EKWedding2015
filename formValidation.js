@@ -4,16 +4,23 @@ function checkFormValues(){
 		
 		
 		//Check the code
+<<<<<<< HEAD
 		/*var isCodeValid = validateCode();
+=======
+		var isCodeValid = sessionStorage.getItem("isCodeValid");
+>>>>>>> origin/Chris
 
-		//This should never happen due to button disabling in the validateCode() method
-		if(!isCodeValid)
+		if(isCodeValid === "false")
 		{
 			alert("Code is invalid");
 			return false;
 		}
+<<<<<<< HEAD
 		//
 		*/
+=======
+		
+>>>>>>> origin/Chris
 		
 		
 		//Check the Main Guest input field
@@ -58,6 +65,7 @@ function checkFormValues(){
 		return inputsValid;
 }
 
+<<<<<<< HEAD
 //Make sure the code exists in the database
 function validateCode(){
 
@@ -115,3 +123,5 @@ function animateCodeBorder(color)
 	window.setTimeout(changeCodeBorder(color), 1000);
 	window.setTimeout(changeCodeBorder("initial"), 1500);
 }
+=======
+>>>>>>> origin/Chris
