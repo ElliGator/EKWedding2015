@@ -70,7 +70,9 @@
 					Name: <input type="text" class="inputs" name="main_guest">
 					<br><br>I'm bringing guests <input id="guest_checkbox" type="checkbox" onchange="handleGuestCheckbox(this)"> <hr>
 				</div>
-				<div id="guest_input" data-state="blank" style="visibility:hidden"></div>
+				<div id="guest_input" data-state="blank" style="visibility:hidden">
+					<!-- This is where guest names will be collected if the user checks 'Im bringing guests'-->
+				</div>
 		
 				</form>	
 
@@ -90,10 +92,11 @@
 				<!-- Function for form submission-->
 				<script>
 					function submitRSVP(){
+						//This method will display any alerts necessary to notify users that fields are incorrect
 						var formValid = checkFormValues();
 
-						//if(formValid)
-							//document.forms["guestForm"].submit();
+						if(formValid)
+							document.forms["guestForm"].submit();
 					}
 				</script>
 			</div>

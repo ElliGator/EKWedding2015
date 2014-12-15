@@ -1,0 +1,6 @@
+*This file shows what information is being sent to which php files from the html forms.
+
+Name     	|  Type    |		    PHP File(s)
+code	  	  string     addGuest.php, checkCode.php
+main_guest	  string	 addGuest.php
+guests[]      string[]   addGuest.php  //You will need to check if this one is set in php because someone may not have guests

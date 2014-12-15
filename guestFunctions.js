@@ -13,15 +13,19 @@ function removeGuestinputs(){
 //Shows the fields which allow guest names to be entered
 function displayGuestInputs() {
 	    var num = document.getElementById("extras").value.trim();
-	    if(num <= 7 && num !== "")
+	    //Only allow input if the number is in the range 1-7
+	    if(num <= 7 && num > 0 && num !== "")
 	    {
 		    var newHTML ="";
 		    
+		    //Create the new html to allow for guest name input
 		    for(i = 0; i < num; i++)
 		     {
 		       newHTML = newHTML + "<br>Guest Name: <input type=\"text\" class=\"inputs\" name=\"guests[]\"><br>";
 		     }
-		     newHTML= newHTML + "<br><button class=\"myButtons\" onclick=\"removeGuestinputs()\">Change # of Guests</button>";
+		    newHTML= newHTML + "<br><button class=\"myButtons\" onclick=\"removeGuestinputs()\">Change # of Guests</button>";
+		   
+		    //Assign the new html to the guestDiv 
 		    var guestDiv = document.getElementById("guest_input");
 			guestDiv.setAttribute("data-state","fields");
 			guestDiv.innerHTML =  newHTML;
