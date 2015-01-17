@@ -1,16 +1,18 @@
 #!/usr/local/bin/php
 <?
-	$arr = array("A","B","C","D");
-	$code = $_GET["code"];
+	//connection settings go here 
+	$dbconn = pg_connect($con_string);
 
-	$exists = "false";
-	foreach($arr as $x)
-	{
-		if($x === $code)
-		{
-			$exists = "true";
-			break;
-		}
+	//Test Connection
+	if(pgsql_connect_errno()){
+		echo "Failed to connect to PostGreSQL: " . pgsql_connect_error();
 	}
-	echo $exists;
+
+	$usr_code = $_GET['code'];
+	$checkcode = "SELECT code FROM codes WHERE code LIKE '$usr_code%'";
+
+	if(!$checkcode)
+		return 'false';
+	else 
+		return 'true';
 ?>

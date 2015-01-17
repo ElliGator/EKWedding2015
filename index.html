@@ -11,21 +11,14 @@
 	    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	    
 	<body>
 
-		<!-- Carousel Starts Here -->
-        <div class="bs-example">
+		<!-- Carousel items -->
+		<div class="bs-example">
             <div id="myCarousel" class="carousel slide" data-interval="6000" data-ride="carousel">
-            	<!-- Carousel indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>   
-               <!-- Carousel items -->
                 <div class="carousel-inner">
                     <div class="active item">
 						<div class="inner-item">
@@ -40,6 +33,26 @@
                     <div class="item">
 						<div class="inner-item">
 	                        <img src="./img/image3.jpg" alt="Image 3">
+						</div>        
+	            	</div>
+	            	<div class="item">
+						<div class="inner-item">
+	                        <img src="./img/image4.jpg" alt="Image 4">
+						</div>        
+	            	</div>
+	            	<div class="item">
+						<div class="inner-item">
+	                        <img src="./img/image5.jpg" alt="Image 5">
+						</div>        
+	            	</div>
+	            	<div class="item">
+						<div class="inner-item">
+	                        <img src="./img/image6.jpg" alt="Image 6">
+						</div>        
+	            	</div>
+	            	<div class="item">
+						<div class="inner-item">
+	                        <img src="./img/image7.jpg" alt="Image 7">
 						</div>        
 	            	</div>
                 </div>
@@ -84,11 +97,11 @@
 				<button id="rsvp_button" class="myButtons" style="position:center;" onclick="submitRSVP()">RSVP</button>
 
 				<!-- Functions for dynamic updates on web page-->
-				<script src="guestFunctions.js"></script>
+				<script src="./js/guestFunctions.js"></script>
 				<!-- Functions for form validation-->
-				<script src="formValidation.js"></script>
+				<script src="./js/formValidation.js"></script>
 				<!-- Functions for code validation-->
-				<script src="codeValidation.js"></script>
+				<script src="./js/codeValidation.js"></script>
 				<!-- Function for form submission-->
 				<script>
 					function submitRSVP(){

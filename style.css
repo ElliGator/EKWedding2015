@@ -85,7 +85,6 @@ img {
 body{
 	background-image:url('./img/background.png');
 	background-attachment:fixed;
-	
 }
 
 .RSVPForm{
@@ -137,7 +136,7 @@ input{
 	text-align:center;
 }
 
-guest_num_input{
+#guest_num_input{
 	font-style:normal;
 }
 
