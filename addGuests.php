@@ -1,10 +1,10 @@
-#!\usr\local\bin\php
+#!/usr/local/bin/php
 <?php
 	
 	$con_string = ""
 
 	//connection settings go here
-	$dbconn = pg_connect($con_string);
+	//$dbconn = pg_connect($con_string);
 	
 	//Test Connection
 	if(pgsql_connect_errno()){
@@ -18,8 +18,8 @@
 
 	//Insert guest leader into db
 	$sql_gst_leader = "INSERT INTO guests VALUES ($gst_code, '$gst_leader', '$gst_leader')" ;
-	$leader_result = pg_query($sql_gst_leader);
-
+	//$leader_result = pg_query($sql_gst_leader);
+	echo "Leader: ".$sql_gst_leader;
 
 
 	if(isset($_POST['guests']))
@@ -33,11 +33,9 @@
 		}
 		$sql_gst = rtrim($sql_gst,",");
 		$sql_gst .= ";";
-		$guests_result = pg_query($sql_gst);
+		//$guests_result = pg_query($sql_gst);
+		echo "Guests: ".$sql_gst;
 	}
 
-		
-
-	
 	
 ?>
