@@ -11,7 +11,7 @@
 	$gst_leader = $_POST['main_guest'];
 
 	//Delete any current data with the code the code
-	$del_query = "DELETE FROM guests WHERE code LIKE '$gst_code'"
+	$del_query = "DELETE FROM guests WHERE code LIKE '$gst_code'";
 	$del_success = pg_query($del_query);
 
 
