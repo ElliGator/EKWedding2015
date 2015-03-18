@@ -21,7 +21,7 @@ function displayGuestInputs() {
 		    //Create the new html to allow for guest name input
 		    for(i = 0; i < num; i++)
 		     {
-		       newHTML = newHTML + "<br>Guest Name: <input type=\"text\" class=\"inputs\" name=\"guests[]\"><br>";
+		       newHTML = newHTML + "<br>Guest Name: <input type=\"text\" class=\"inputs\" name=\"guests[]\" placeholder=\"Enter Full Name\"><br>";
 		     }
 		    newHTML= newHTML + "<br><button class=\"myButtons\" onclick=\"removeGuestinputs()\">Change # of Guests</button>";
 		   
