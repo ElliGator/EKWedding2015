@@ -11,7 +11,7 @@
 	$gst_leader = $_POST['main_guest'];
 
 	//Insert guest leader into db
-	$sql_gst_leader = "INSERT INTO guests VALUES ('$gst_code', '$gst_leader', '$gst_leader')" ;
+	$sql_gst_leader = "INSERT INTO guests VALUES ('$gst_code', '$gst_leader', '$gst_leader');" ;
 	$leader_result = pg_query($sql_gst_leader);
 	//echo "Leader: ".$sql_gst_leader;
 
