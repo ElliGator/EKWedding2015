@@ -13,7 +13,8 @@
 	//Check if code has already been used by someone else
 	$check_query = "SELECT checkIfCodeUsed('$gst_leader', '$gst_code');";
 	$check_result = pg_query($check_query);
-	$codeIsValid = (bool) pg_fetch_row($check_result)[0];
+	$row = pg_fetch_row($check_result);
+	$codeIsValid = (bool) ($row[0]);
 
 	//If the code is not valid, don't execute anything and display message
 	if($codeIsValid == FALSE)
