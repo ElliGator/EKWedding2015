@@ -14,12 +14,25 @@
 	$del_query = "DELETE FROM guests WHERE code LIKE '$gst_code'";
 	$del_success = pg_query($del_query);
 
+	//Error handling
+	if($del_success == FALSE)
+	{
+		echo 'Unable to update RSVP!';
+		return;
+	}
+
 
 	//Insert guest leader into db
 	$sql_gst_leader = "INSERT INTO guests VALUES ('$gst_code', '$gst_leader', '$gst_leader');" ;
 	$leader_success = pg_query($sql_gst_leader);
 	//echo "Leader: ".$sql_gst_leader;
 
+	//Error handling
+	if($leader_success == FALSE)
+	{
+		echo 'Unable to update RSVP!';
+		return;
+	}
 
 	if(isset($_POST['guests']))
 	{
@@ -34,5 +47,12 @@
 		$sql_gst .= ";";
 		$guests_success = pg_query($sql_gst);
 		//echo "Guests: ".$sql_gst;
+
+		//Error handling
+		if($guests_success == FALSE)
+		{
+			echo 'Unable to add your guests! Please try again!';
+			return;
+		}
 	}
 ?>
