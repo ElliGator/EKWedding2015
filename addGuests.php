@@ -1,7 +1,7 @@
 #!/usr/local/bin/php
 <?php
 	
-	$con_string = ""
+	$con_string = "";
 
 	//connection settings go here
 	//$dbconn = pg_connect($con_string);
@@ -24,11 +24,11 @@
 
 	if(isset($_POST['guests']))
 	{
-		$guests = $_POST['guests']);
+		$guests = $_POST['guests'];
 
 		//Iterate through guests array and insert into db
 		$sql_gst = "INSERT INTO guests VALUES";
-		foreach (($guests as $x)) {
+		foreach ($guests as $x) {
 			$sql_gst .= "('$gst_code', '$gst_leader', '$x'),";
 		}
 		$sql_gst = rtrim($sql_gst,",");
