@@ -10,6 +10,18 @@
 	$gst_code = $_POST['code'];
 	$gst_leader = $_POST['main_guest'];
 
+	//Check if code has already been used by someone else
+	$check_query = "SELECT checkIfCodeUsed('$gst_leader', '$gst_code');";
+	$check_result = pg_query($check_query);
+	$codeIsValid = (bool) pg_fetch_row($check_result)[0];
+
+	//If the code is not valid, don't execute anything and display message
+	if($codeIsValid == FALSE)
+	{
+		echo 'Code has already been used or is invalid';
+		return;
+	}
+
 	//Delete any current data with the code the code
 	$del_query = "DELETE FROM guests WHERE code LIKE '$gst_code'";
 	$del_success = pg_query($del_query);
