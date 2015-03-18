@@ -8,5 +8,6 @@ THEN
 ELSE
 	RETURN FALSE;
 
+END IF;
 END
 $$ LANGUAGE plpgsql;
