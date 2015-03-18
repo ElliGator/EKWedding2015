@@ -1,5 +1,5 @@
 DROP TABLE codes;
 
 CREATE TABLE codes(
-	code integer PRIMARY KEY
+	code CHAR(4) PRIMARY KEY
 );
