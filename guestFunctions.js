@@ -5,10 +5,12 @@ function removeGuestinputs(){
 		var guestDiv = document.getElementById("guest_input");
 		guestDiv.setAttribute("data-state","blank");
 		guestDiv.innerHTML =  newHTML;
-
-		//Show num guest input
-		document.getElementById("guest_num_input").style.visibility="visible";
 	}
+
+function showNumGuestPrompt(){
+	//Show num guest input
+	document.getElementById("guest_num_input").style.visibility="visible";
+}
 
 //Shows the fields which allow guest names to be entered
 function displayGuestInputs() {
@@ -23,7 +25,7 @@ function displayGuestInputs() {
 		     {
 		       newHTML = newHTML + "<br>Guest Name: <input type=\"text\" class=\"inputs\" name=\"guests[]\" placeholder=\"Enter Full Name\"><br>";
 		     }
-		    newHTML= newHTML + "<br><button class=\"myButtons\" onclick=\"removeGuestinputs()\">Change # of Guests</button>";
+		    newHTML= newHTML + "<br><button class=\"myButtons\" onclick=\"removeGuestinputs(); showNumGuestPrompt();\">Change # of Guests</button>";
 		   
 		    //Assign the new html to the guestDiv 
 		    var guestDiv = document.getElementById("guest_input");
@@ -48,5 +50,6 @@ function handleGuestCheckbox(checkbox){
 		{
 			document.getElementById("guest_num_input").style.visibility="hidden";
 			document.getElementById("guest_input").style.visibility="hidden";
+			removeGuestinputs();
 		}
 	}
