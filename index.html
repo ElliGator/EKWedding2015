@@ -9,13 +9,14 @@
     	<!--Example of Twitter Bootstrap 3 Carousel -->
 	   	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	    <link rel="stylesheet" type="text/css" href="css/style.css">
+
 	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+	    <script src="js/bootstrap.min.js"></script>
+		
 	</head>
 	    
 	<body>
-
 		<!-- Carousel items -->
 		<div class="bs-example">
             <div id="myCarousel" class="carousel slide" data-interval="6000" data-ride="carousel">
@@ -67,8 +68,35 @@
         </div>
 		<!-- Carousel Ends Here -->
 
+		<!--Navbar Starts Here-->
+		<nav class="navbar navbar-default-custom">
+  			<div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
 
-
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		      	<li class="dropdown active">
+		        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Directions <span class="caret"></span></a>
+		        	<ul class="dropdown-menu" role="menu">
+		        		<li><a href="https://www.google.com/maps/place/First+Baptist+Church+of+Trenton/@29.6135634,-82.8156553,150m/data=!3m1!1e3!4m2!3m1!1s0x88e8dde6cb897db1:0x7ee92442cc25fcd4?hl=en"> First Baptist Church of Trenton 
+		        		</a></li>
+		        		<li><a href="https://www.google.com/maps/place/25420+W+Newberry+Rd,+Newberry,+FL+32669/@29.646567,-82.612401,252m/data=!3m2!1e3!4b1!4m2!3m1!1s0x88e8c11bd99f559d:0xed7c434323d89320?hl=en"> Municipal Hall of Newberry 
+		        		</a></li>
+		        	</ul>
+		        </li>
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Registry <span class="caret"></span></a>
+		          <ul class="dropdown-menu" role="menu">
+		            <li><a href="http://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?pwsToken=&eventType=Wedding&registryId=541829304&pwsurl=">Bed Bath & Beyond</a></li>
+		          </ul>
+		        </li>
+		        <li><a href="https://www.facebook.com/kristina.m.hicks"> Contact Us </a></li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+		<!--Navbar Ends Here-->
 
 		<!-- Form Starts Here -->
 		<div class="RSVPFormContainer">
@@ -79,7 +107,7 @@
 
 				<form id="guest_form" class="form" name="guestForm" action="addGuests.php" method="POST">
 				<div id="name_input">
-					Code: <input type="text" class="inputs" id="code" name="code" onblur="validateCode();"><br><br>
+					Code: <input type="text" class="inputs" id="code" name="code" placeholder="i.e. ABCD" onblur="validateCode();"><br><br>
 					Name: <input type="text" class="inputs" name="main_guest" placeholder="Enter Full Name">
 					<br><br>I'm bringing guests <input id="guest_checkbox" type="checkbox" onchange="handleGuestCheckbox(this)"> <hr>
 				</div>
@@ -97,11 +125,11 @@
 				<button id="rsvp_button" class="myButtons" style="position:center;" onclick="submitRSVP()">RSVP</button>
 
 				<!-- Functions for dynamic updates on web page-->
-				<script src="guestFunctions.js"></script>
+				<script src="js/guestFunctions.js"></script>
 				<!-- Functions for form validation-->
-				<script src="formValidation.js"></script>
+				<script src="js/formValidation.js"></script>
 				<!-- Functions for code validation-->
-				<script src="codeValidation.js"></script>
+				<script src="js/codeValidation.js"></script>
 				<!-- Function for form submission-->
 				<script>
 					function submitRSVP(){
@@ -119,6 +147,6 @@
 	</body><br>
 
 	    <footer>
-	    	Contributors: Richard Leon, Chris Whitten, Elli Carranza
+	    	Website Created By: Richard Leon, Chris Whitten, Elli Carranza
 	    </footer>
 </html>

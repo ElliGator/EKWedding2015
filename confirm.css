@@ -1,0 +1,102 @@
+.navbar-default-custom {
+  	background-repeat: repeat-x;
+	  border-radius: 7px;
+	  background-color: #FF8F61;
+	  border-color: #FFFFFF;
+	  margin-bottom: 0px;
+}
+
+.navbar-brand,
+.navbar-nav > li > a {
+  	text-shadow: 0 1px 0 rgba(255, 255, 255, .25);
+}
+
+.navbar-static-top,
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  	border-radius: 15px;
+}
+
+/*Decorates dropdown menu*/
+.navbar-default-custom .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default-custom .navbar-nav > li > .dropdown-menu > li > a:focus {
+	color: #00E5EE;
+	background-color: #C3C2C2;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background-color: #C3C2C2;
+    font-family: "IM Fell French Canon", serif;
+}
+
+/*Decorates navbar list*/
+.navbar-default-custom .navbar-nav > li > a {
+   	color: white; /*Change active text color here*/
+   	font-size: 15px;
+   	font-family: "IM Fell French Canon", serif;
+}
+
+.navbar-default-custom .navbar-nav > li > a:hover,
+.navbar-default-custom .navbar-nav > li > .open > a {
+	color: #00E5EE;
+}
+
+/*Keeps Dropdown highlighted when dropped down*/
+.navbar-default-custom .navbar-nav > .active > a, .navbar-default-custom .navbar-nav > .active > a:hover, .navbar-default-custom .navbar-nav > .active > a:focus {
+  color: #00e5ee;
+}
+.navbar-default-custom .navbar-nav > .open > a, .navbar-default-custom .navbar-nav > .open > a:hover, .navbar-default-custom .navbar-nav > .open > a:focus {
+  color: #00e5ee;
+}
+
+@media (min-width: 768px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+}
+
+h2{
+    margin: 0;
+    color: #FF8F61;
+    padding-top: 50px;
+    font-size: 72px;
+    font-family: "Bilbo Swash Caps", cursive;
+    text-shadow: 1px 1px #EEEEEE;
+}
+
+p{
+    font-family:"IM Fell French Canon", serif;
+    font-style:italic;
+    font-size: 18px;
+    color: #BBBBBB;
+    margin:25px;
+}
+
+body{
+	background-image:url('../img/background.png');
+	background-attachment:fixed;
+}
+
+.ConfirmRSVP{
+	margin-left:auto;
+	margin-right:auto;
+	min-height:50%;
+	width:80%;
+	background-color: white;
+	text-align:center;
+	border-style:solid;
+	border-right-color: #DDDDDD;
+	border-right-width:2px;
+	border-left-color: #DDDDDD;
+	border-left-width:2px;
+	border-bottom-color:#FFFFFF;
+	border-bottom-width:1px;
+	border-top-width:0px;
+	border-radius: 15px;
+}
