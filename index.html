@@ -76,7 +76,8 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-		      	<li class="dropdown active">
+		      	<li class="active"> <a href="index.html"> Home </a></li>
+		      	<li class="dropdown">
 		        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Directions <span class="caret"></span></a>
 		        	<ul class="dropdown-menu" role="menu">
 		        		<li><a href="https://www.google.com/maps/place/First+Baptist+Church+of+Trenton/@29.6135634,-82.8156553,150m/data=!3m1!1e3!4m2!3m1!1s0x88e8dde6cb897db1:0x7ee92442cc25fcd4?hl=en"> First Baptist Church of Trenton 
@@ -89,9 +90,10 @@
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Registry <span class="caret"></span></a>
 		          <ul class="dropdown-menu" role="menu">
 		            <li><a href="http://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?pwsToken=&eventType=Wedding&registryId=541829304&pwsurl=">Bed Bath & Beyond</a></li>
+		            <li><a href="http://www.target.com/gift-registry/giftgiver?registryId=l3AJv1Fr9tO64UqQq8WMFw&registryType=WEDDING">Target</a></li>
 		          </ul>
 		        </li>
-		        <li><a href="https://www.facebook.com/kristina.m.hicks"> Contact Us </a></li>
+		        <li><a href="contact.html"> Contact Us </a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
@@ -109,7 +111,7 @@
 				<div id="name_input">
 					Code: <input type="text" class="inputs" id="code" name="code" placeholder="i.e. ABCD" onblur="validateCode();"><br><br>
 					Name: <input type="text" class="inputs" name="main_guest" placeholder="Enter Full Name">
-					<br><br>I'm bringing guests <input id="guest_checkbox" type="checkbox" onchange="handleGuestCheckbox(this)"> <hr>
+					<br><br>I'm bringing guests <input id="guest_checkbox" type="checkbox" name="checkbox" onchange="handleGuestCheckbox(this)"> <hr>
 				</div>
 				<div id="guest_input" data-state="blank" style="visibility:hidden">
 					<!-- This is where guest names will be collected if the user checks 'Im bringing guests'-->

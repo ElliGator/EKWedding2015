@@ -1,26 +1,28 @@
 #!/usr/local/bin/php
 <?php
 	
-	$con_string = " ";
+	$con_string = "host= port= dbname= user= password=";
 
 	//connection settings go here
 	$dbconn = pg_connect($con_string);
 	
 	//Receive form values, guests is an array
 	$gst_code = $_POST['code'];
-	$gst_leader = $_POST['main_guest'];
+	$gst_leader = trim($_POST['main_guest']);
 
 	//Check if code has already been used by someone else
 	$check_query = "SELECT checkIfCodeUsed('$gst_leader', '$gst_code');";
 	$check_result = pg_query($check_query);
 	$row = pg_fetch_row($check_result);
 	$codeIsUsed = $row[0];
+	//echo $codeIsUsed;
 
 	//If the code is not valid, don't execute anything and display message
 	if($codeIsUsed == 1)
 	{
 		echo 'Code has already been used or is invalid';
-		return;
+		header("Location: http://www.cise.ufl.edu/~ec1/error_rsvp.html");
+		exit();
 	}
 
 	//Delete any current data with the code the code
@@ -31,7 +33,8 @@
 	if($del_success == FALSE)
 	{
 		echo 'Unable to update RSVP!';
-		return;
+		header("Location: http://www.cise.ufl.edu/~ec1/error_rsvp.html");
+		exit();
 	}
 
 
@@ -44,7 +47,8 @@
 	if($leader_success == FALSE)
 	{
 		echo 'Unable to update RSVP!';
-		return;
+		header("Location: http://www.cise.ufl.edu/~ec1/error_rsvp.html");
+		exit();
 	}
 
 	if(isset($_POST['guests']))
@@ -65,7 +69,11 @@
 		if($guests_success == FALSE)
 		{
 			echo 'Unable to add your guests! Please try again!';
-			return;
+			header("Location: http://www.cise.ufl.edu/~ec1/error_rsvp.html");
+			exit();
 		}
 	}
+
+	header("Location: http://www.cise.ufl.edu/~ec1/confirm_rsvp.html");
+	exit();
 ?>

@@ -1,7 +1,7 @@
 #!/usr/local/bin/php
 <?
 	
-	$con_string = " ";
+	$con_string = "host= port= dbname= user= password=";
 
 	//connection settings go here 
 	$dbconn = pg_connect($con_string);

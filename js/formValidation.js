@@ -13,8 +13,7 @@ function checkFormValues(){
 		}
 		
 		//Check the Main Guest input field
-		var nameForm= document.forms["guestForm"]["main_guest"];
-		var value = nameForm.value.trim();
+		var value = document.forms["guestForm"]["main_guest"].value.trim();
 		if(!value)
 		{
 			alert("Name field cannot be empty");
