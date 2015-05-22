@@ -1,7 +1,7 @@
 #!/usr/local/bin/php
 <?
 	
-	$con_string = "host=postgres.cise.ufl.edu port=5432 dbname=ekweddb user=ec1 password=SQLpassword12";
+	$con_string = " ";
 
 	//connection settings go here 
 	$dbconn = pg_connect($con_string);
